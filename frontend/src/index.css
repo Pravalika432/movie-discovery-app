@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0b0f;
+  color: #ffffff;
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111116;
+  border-bottom: 1px solid #24242c;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #aaa;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+}
+
+/* HERO */
+
+.home {
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 70px 5% 50px;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    #191923 0%,
+    #0b0b0f 100%
+  );
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  color: #aaa;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* SEARCH */
+
+.search-bar {
+  max-width: 650px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 15px 18px;
+  border: 1px solid #33333d;
+  border-radius: 10px;
+  background: #17171e;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #777;
+}
+
+.search-bar button,
+.error button,
+.wishlist-button,
+.back-button {
+  border: none;
+  border-radius: 10px;
+  padding: 13px 20px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search-bar button:hover,
+.error button:hover,
+.wishlist-button:hover,
+.back-button:hover {
+  transform: translateY(-2px);
+}
+
+/* MOVIES */
+
+.movies-section {
+  padding: 40px 5% 70px;
+}
+
+.movies-section h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+.movie-card {
+  background: #15151c;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  border: 1px solid #24242c;
+}
+
+.movie-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.movie-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-info {
+  padding: 14px;
+}
+
+.movie-info h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #aaa;
+  font-size: 13px;
+}
+
+/* LOADING / ERROR */
+
+.loading,
+.error,
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #aaa;
+}
+
+.error h2,
+.empty-state h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.error button {
+  margin-top: 20px;
+}
+
+/* MOVIE DETAILS */
+
+.movie-details {
+  min-height: 100vh;
+  padding: 40px 5% 70px;
+}
+
+.back-button {
+  margin-bottom: 35px;
+}
+
+.details-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.details-poster {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+}
+
+.details-content h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  margin-bottom: 20px;
+}
+
+.details-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.genre {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #25252e;
+  color: #ddd;
+  font-size: 13px;
+}
+
+.details-content h2 {
+  margin-bottom: 12px;
+}
+
+.overview {
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.wishlist-button {
+  padding: 15px 22px;
+}
+
+/* WISHLIST */
+
+.wishlist-page {
+  min-height: 100vh;
+  padding: 50px 5% 70px;
+}
+
+.wishlist-header {
+  margin-bottom: 35px;
+}
+
+.wishlist-header h1 {
+  margin-bottom: 10px;
+}
+
+.wishlist-header p {
+  color: #999;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 50px 20px 40px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-bar button {
+    width: 100%;
+  }
+
+  .movies-section {
+    padding: 30px 20px 50px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .movie-info {
+    padding: 10px;
+  }
+
+  .movie-info h3 {
+    font-size: 14px;
+  }
+
+  .details-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .details-poster {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .movie-details,
+  .wishlist-page {
+    padding: 30px 20px 50px;
+  }
+}
