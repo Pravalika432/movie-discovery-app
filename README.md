@@ -312,13 +312,7 @@ Loom Demo:
 https://www.loom.com/share/b08e6e8a6f6944a985052a55264d9ff5
 ```
 
-## 🔗 Repository
 
-GitHub Repository:
-
-```text
-<ADD YOUR GITHUB REPOSITORY LINK HERE>
-```
 
 ## 🙏 Attribution
 
